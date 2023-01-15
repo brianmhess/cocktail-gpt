@@ -23,9 +23,13 @@ def show_recipe(rstr):
     st.markdown(f'Description: {rj["description"]}')
     st.markdown(f'### Ingredients')
     for ii in rj["ingredients"]:
-        st.markdown(f'* {ii}')
+        st.markdown(f'* {ii["ingredient"]}: {ii["amount"]}')
     st.markdown(f'### Instructions')
     st.markdown(f'{rj["instructions"]}')
+    st.markdown(f'Glass: {rj["glass"]}')
+    st.markdown(f'Garnish: {rj["garnish"]}')
+    st.markdown(f'Suggestions: {rj["suggestions"]}')
+    
 
 name = st.text_input("Show me a cocktail named")
 
@@ -33,4 +37,4 @@ if (len(name) > 0):
     rec = get_via_openai_named(name)
     for ch in rec["choices"]:
         show_recipe(ch["text"])
-    st.json(rec)
+    st.sidebar.json(rec)
