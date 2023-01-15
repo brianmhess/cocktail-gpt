@@ -37,4 +37,4 @@ if (len(name) > 0):
     rec = get_via_openai_named(name)
     for ch in rec["choices"]:
         show_recipe(ch["text"])
-    st.sidebar.json(rec)
+    st.sidebar.json(rec["choices"])
