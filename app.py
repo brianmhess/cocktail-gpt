@@ -16,7 +16,7 @@ def get_via_openai_named(name):
     ai_resp = openai.Completion.create(**data)
     return ai_resp
 
-name = st.textbox("Show me a cocktail named")
+name = st.text_input("Show me a cocktail named")
 
 if (len(name) > 0):
     rec = get_via_openai_named(name)
