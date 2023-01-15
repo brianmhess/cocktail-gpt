@@ -1,5 +1,6 @@
 import streamlit as st
 import openai
+import json
 
 st.markdown("## CocktailGPT")
 
@@ -16,8 +17,14 @@ def get_via_openai_named(name):
     ai_resp = openai.Completion.create(**data)
     return ai_resp
 
+def show_recipe(rstr):
+    rj = json.loads(rstr)
+    st.markdown(f'## {rj["name"]')
+    st.markdown(f'Description: {rj["description"]}')
+
 name = st.text_input("Show me a cocktail named")
 
 if (len(name) > 0):
     rec = get_via_openai_named(name)
-    st.json(rec)
+    for ch in rec["choices"]:
+        show_recipe(ch["text"])
