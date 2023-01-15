@@ -20,15 +20,15 @@ def get_via_openai_named(name):
 def show_recipe(rstr):
     rj = json.loads(rstr)
     st.markdown(f'## :blue[{rj["name"]}]')
-    st.markdown(f':blue[Description]: {rj["description"]}')
+    st.markdown(f':blue[**Description**]: {rj["description"]}')
     st.markdown(f'### Ingredients')
     for ii in rj["ingredients"]:
-        st.markdown(f'* :blue[{ii["ingredient"]}]: {ii["amount"]}')
+        st.markdown(f'* :blue[**{ii["ingredient"]}**]: {ii["amount"]}')
     st.markdown(f'### Instructions')
     st.markdown(f'{rj["instructions"]}')
-    st.markdown(f':blue[Glass]: {rj["glass"]}')
-    st.markdown(f':blue[Garnish]: {rj["garnish"]}')
-    st.markdown(f':blue[Suggestions]: {rj["suggestions"]}')
+    st.markdown(f':blue[**Glass**]: {rj["glass"]}')
+    st.markdown(f':blue[**Garnish**]: {rj["garnish"]}')
+    st.markdown(f':blue[**Suggestions**]: {rj["suggestions"]}')
     
 
 name = st.text_input("Show me a cocktail named")
