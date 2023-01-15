@@ -21,6 +21,11 @@ def show_recipe(rstr):
     rj = json.loads(rstr)
     st.markdown(f'## {rj["name"]}')
     st.markdown(f'Description: {rj["description"]}')
+    st.markdown(f'### Ingredients')
+    for ii in rj["ingredients"]:
+        st.markdown(f'* {ii}')
+    st.markdown(f'### Instructions')
+    st.markdown(f'{rj["instructions"]}')
 
 name = st.text_input("Show me a cocktail named")
 
@@ -28,3 +33,4 @@ if (len(name) > 0):
     rec = get_via_openai_named(name)
     for ch in rec["choices"]:
         show_recipe(ch["text"])
+    st.json(rec)
