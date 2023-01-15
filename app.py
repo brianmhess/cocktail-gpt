@@ -19,7 +19,7 @@ def get_via_openai_named(name):
 
 def show_recipe(rstr):
     rj = json.loads(rstr)
-    st.markdown(f'## {rj["name"]')
+    st.markdown(f'## {rj["name"]}')
     st.markdown(f'Description: {rj["description"]}')
 
 name = st.text_input("Show me a cocktail named")
