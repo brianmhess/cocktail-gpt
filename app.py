@@ -136,7 +136,7 @@ ingredients = ['Sugar syrup',
 ]
 
 prompts = ["Show me a cocktail named", "Show me a cocktail including/excluding", "Show me a cocktail (freeform)"] 
-prompt = st.select("What sort of cocktail", options=prompts, index=0)
+prompt = st.selectbox("What sort of cocktail", options=prompts, index=0)
 
 input = ""
 if (prompt == "Show me a cocktail named"):
