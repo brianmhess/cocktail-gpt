@@ -6,6 +6,11 @@ with st.expander("About CocktailGPT"):
     st.markdown("""
 CocktailGPT is an app I built that allows you
 to ask ChatGPT for a cocktail recipe. 
+
+There are 3 ways to find a cocktail:
+* by name - just enter a name of a cocktail
+* by ingredients - choose ingredients to include and/or exclude
+* by freeform text - describe what you are looking for
 """)
 
 openai.api_key = st.secrets["OPENAI_KEY"]
@@ -168,5 +173,5 @@ if (len(input) > 0):
     if (type(choices) != "list"):
         choices = [choices]
     for ch in choices:
-        show_recipe(ch["text"])
+        show_recipe(ch)
 
