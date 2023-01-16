@@ -155,7 +155,7 @@ if (prompt == "Show me a cocktail including/excluding"):
         if (len(excluding)>0):
             input = f"Show me a cocktail which does not include {','.join(excluding)}"
 
-if (prompt = "Show me a cocktail (freeform)"):
+if (prompt == "Show me a cocktail (freeform)"):
     freetext = st.text_input("Fill in the blank: Shoe me a cocktail ____")
     if (len(freetext)>0):
         input = f"Show me a cocktail {freetext}"
