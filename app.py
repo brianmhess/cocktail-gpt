@@ -166,7 +166,8 @@ if (prompt == "Show me a cocktail (freeform)"):
         input = f"Show me a cocktail {freetext}"
 
 if (len(input) > 0):
-    rec = get_via_openai(input)
+    with st.spinner(text="Mixing up your cocktail...")
+        rec = get_via_openai(input)
     #st.sidebar.json(rec["choices"])
     recch = rec["choices"][0]
     choices = json.loads(recch["text"])
