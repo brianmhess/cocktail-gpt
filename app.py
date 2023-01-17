@@ -38,7 +38,7 @@ def show_recipe(rj):
     st.markdown(f':blue[**Garnish**]: {rj["garnish"]}')
     st.markdown(f':blue[**Suggestions**]: {rj["suggestions"]}')
     
-ingredients = ['Sugar syrup',
+ingredients = sorted(['Sugar syrup',
 'Lime juice',
 'Lemon juice',
 'London dry gin',
@@ -138,7 +138,7 @@ ingredients = ['Sugar syrup',
 'Tonic water',
 'Anise liqueur',
 'Crème de framboise liqueur'
-]
+])
 
 prompts = ["Show me a cocktail named", "Show me a cocktail including/excluding", "Show me a cocktail (freeform)"] 
 prompt = st.selectbox("What sort of cocktail", options=prompts, index=0)
@@ -161,7 +161,7 @@ if (prompt == "Show me a cocktail including/excluding"):
             input = f"Show me a cocktail which does not include {','.join(excluding)}"
 
 if (prompt == "Show me a cocktail (freeform)"):
-    freetext = st.text_input("Fill in the blank: Shoe me a cocktail ____")
+    freetext = st.text_input("Fill in the blank: Show me a cocktail ____")
     if (len(freetext)>0):
         input = f"Show me a cocktail {freetext}"
 
