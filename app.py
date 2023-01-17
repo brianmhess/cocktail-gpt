@@ -167,7 +167,7 @@ if (prompt == "Show me a cocktail (freeform)"):
 
 if (len(input) > 0):
     rec = get_via_openai(input)
-    st.sidebar.json(rec["choices"])
+    #st.sidebar.json(rec["choices"])
     recch = rec["choices"][0]
     choices = json.loads(recch["text"])
     if (type(choices) != "list"):
