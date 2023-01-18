@@ -19,7 +19,7 @@ def get_via_openai(input):
     data = {
                 "model": "text-davinci-003",
                 "prompt": input + '. Your answer should be in ounces. Your answer should be in valid JSON format for Python. For example: {"name": "My Cocktail", "description": "This is a nice cocktail for a cold day", "ingredients": [ {"ingredient": "Bourbon whiskey", "amount": "2 ounces"}, {"ingredient": "Sweet vermouth", "amount": "1 ounce"}, {"ingredient": "Angostura bitters", "amount": "2 dashes"}], "instructions": "Combine all ingredients in a mixing glass with ice. Stir until chilled. Strain into glass", "glass": "Coupe glass", "garnish": "Maraschino cherry", "suggestions": "You can also use Rye instead of Bourbon." }',
-                "max_tokens": 256,
+                "max_tokens": 512,
                 "temperature": 0.10,
                 "n": 1
             }
