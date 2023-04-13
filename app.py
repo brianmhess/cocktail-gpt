@@ -14,7 +14,7 @@ There are 3 ways to find a cocktail:
 """)
 
 openai.api_key = st.secrets["OPENAI_KEY"]
-
+print(f"OPENAI_KEY: {st.secrets['OPENAI_KEY']}"
 def get_via_openai(input):
     data = {
                 "model": "text-davinci-003",
